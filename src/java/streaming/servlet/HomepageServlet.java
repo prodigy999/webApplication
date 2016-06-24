@@ -25,17 +25,23 @@ public class HomepageServlet extends HttpServlet {
         
         Cookie c;
         
-        c= new Cookie("login", " ");
+        //c= new Cookie("login", " ");
+        //c.setMaxAge(0);
+        //resp.addCookie(c);
+        
+        //c= new Cookie("utilType", " ");
+        //c.setMaxAge(0);
+        //resp.addCookie(c);
+        
+        //c= new Cookie("motdepasse", " ");
+        //c.setMaxAge(0);
+        //resp.addCookie(c);
+        
+        c = new Cookie("style_cookie", " ");
         c.setMaxAge(0);
         resp.addCookie(c);
         
-        c= new Cookie("utilType", " ");
-        c.setMaxAge(0);
-        resp.addCookie(c);
-        
-        c= new Cookie("motdepasse", " ");
-        c.setMaxAge(0);
-        resp.addCookie(c);
+        req.getSession().removeAttribute("UtilConnecte");
         
         req.getRequestDispatcher("home.jsp").forward(req, resp);
     }

@@ -29,10 +29,14 @@ public class ConnexionServlet extends HttpServlet {
             String log = req.getParameter("login");
             String mdp = req.getParameter("motDePasse");
             Utilisateur u = new UtilService().rechercherLoginMDPEtatValide(log, mdp);
-               
-            resp.addCookie(new Cookie("utilType", u.getTypeUtil().toString()));
-            resp.addCookie(new Cookie("login", log));
-            resp.addCookie(new Cookie("motdepasse", mdp));
+            
+            //par session
+            req.getSession().setAttribute("UtilConnecte", u);
+            
+            //par cookies
+            //resp.addCookie(new Cookie("utilType", u.getTypeUtil().toString()));
+            //resp.addCookie(new Cookie("login", log));
+            //resp.addCookie(new Cookie("motdepasse", mdp));
             
             
             resp.sendRedirect("Lister_Films");

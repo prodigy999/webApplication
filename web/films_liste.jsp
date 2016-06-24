@@ -21,8 +21,7 @@
                         <th>Titre</th>
                         <th>Année</th>
                         <th>Genre</th>
-                        <th>Pays</th>
-                        <th>Outil</th>
+                        <th>Pays</th>                        
                     </tr>
                 </thead>
                 <tbody>
@@ -37,7 +36,7 @@
                                     <br>
                                 </c:forEach>
                             </td>
-                            <c:if test="${cookie.utilType.getValue()=='ADMIN'}">
+                            <c:if test="${UtilConnecte.typeUtil=='ADMIN'}">
                                 <td><a href="suppr_film?idFilm=${film.id}">Supprimer</a></td>
                             </c:if>
                         </tr>

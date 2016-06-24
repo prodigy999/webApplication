@@ -3,20 +3,17 @@
 <a href="Lister_Films">Films</a>
 <a href="Lister_Series">Series</a>
 <c:choose>
-    <c:when test="${cookie.login==null}">
+    <c:when test="${UtilConnecte.login==null}">
         <a href="login">Connexion</a>
     </c:when>
     <c:otherwise>
         <a href="home">Deconnexion</a>
-        <c:if test="${cookie.utilType.getValue()=='ADMIN'}">
+        <c:if test="${UtilConnecte.typeUtil=='ADMIN'}">
             <a href="ajout_film">Ajout Film</a>
             <a href="ajout_serie">Ajout Serie</a>
+            <a href="stylesheet?style_cookie=style1">Blanc</a>
+            <a href="stylesheet?style_cookie=style2">Bleu</a>
         </c:if>
     </c:otherwise>
 </c:choose>
-<label>Style :</label>            
-<select name="style">
-    <label>Pays :</label>
-     <option value="style1">Blanc</option>
-     <option value="style2">Bleu</option>
-</select>
+

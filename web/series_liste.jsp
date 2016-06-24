@@ -32,7 +32,7 @@
                                 <c:forEach items="${serie.pays}" var="pays">
                                     ${pays.nom}
                                 </c:forEach></td>
-                                <c:if test="${cookie.utilType.getValue()=='ADMIN'}">
+                                <c:if test="${UtilConnecte.typeUtil=='ADMIN'}">
                                 <td><a href="suppr_serie?idSerie=${serie.id}">Supprimer</a></td>
                                 </c:if>
                                 <br>
